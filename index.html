@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación de Cálculo Interactivo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Calculadora Pro</h1>
+            <p>Módulo 3: Fundamentos de JavaScript</p>
+        </header>
+
+        <section class="calculator">
+            <div class="display">
+                <div id="prev-val" class="upper-display"></div>
+                <div id="curr-val" class="lower-display">0</div>
+            </div>
+            
+            <button onclick="iniciarModoPrompt()" class="btn-prompt">Activar Modo Interactivo (Prompt)</button>
+
+            <div class="grid-buttons">
+                <button onclick="limpiar()" class="btn-special span-2">AC</button>
+                <button onclick="borrar()" class="btn-special">DEL</button>
+                <button onclick="setOperacion('/')" class="btn-op">÷</button>
+                
+                <button onclick="addNum('7')">7</button>
+                <button onclick="addNum('8')">8</button>
+                <button onclick="addNum('9')">9</button>
+                <button onclick="setOperacion('*')" class="btn-op">×</button>
+                
+                <button onclick="addNum('4')">4</button>
+                <button onclick="addNum('5')">5</button>
+                <button onclick="addNum('6')">6</button>
+                <button onclick="setOperacion('-')" class="btn-op">-</button>
+                
+                <button onclick="addNum('1')">1</button>
+                <button onclick="addNum('2')">2</button>
+                <button onclick="addNum('3')">3</button>
+                <button onclick="setOperacion('+')" class="btn-op">+</button>
+                
+                <button onclick="addNum('0')" class="span-2">0</button>
+                <button onclick="addNum('.')">.</button>
+                <button onclick="ejecutarCalculo()" class="btn-equal">=</button>
+            </div>
+        </section>
+
+        <aside class="history">
+            <h3>Historial de Operaciones</h3>
+            <ul id="history-list">
+                <li class="empty-msg">No hay registros aún</li>
+            </ul>
+        </aside>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

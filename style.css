@@ -1,0 +1,148 @@
+/* Variables para facilitar cambios de color y metadatos visuales */
+:root {
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --primary: #4a5568;
+    --accent: #667eea;
+    --text: #2d3748;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+    justify-content: center;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+/* --- Contenedor de la Calculadora --- */
+.calculator {
+    background: var(--glass-bg);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    width: 350px;
+}
+
+.display {
+    background: #2d3748;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.upper-display {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    height: 1.2rem;
+}
+
+.lower-display {
+    color: var(--white);
+    font-size: 2.2rem;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+/* --- Botones --- */
+.grid-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+    gap: 10px;
+}
+
+.span-2 {
+    grid-column: span 2; /* Ocupa el espacio de dos botones */
+}
+
+button {
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #edf2f7;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #e2e8f0;
+}
+
+.btn-op { background: #feebc8; color: #7b341e; }
+.btn-special { background: #fed7d7; color: #822727; }
+.btn-equal { background: var(--accent); color: white; grid-column: span 1; }
+.span-2 { grid-column: span 2; }
+
+.btn-prompt {
+    width: 100%;
+    margin-bottom: 15px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Historial --- */
+.history {
+    background: var(--glass-bg);
+    padding: 25px;
+    border-radius: 20px;
+    width: 300px;
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+.history h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+}
+
+#history-list li {
+    list-style: none;
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+}
+
+#history-list li strong { color: var(--text); font-size: 1rem; }
+#history-list li span { color: #718096; font-size: 0.75rem; margin-top: 4px; }
+
+.empty-msg { color: #a0aec0; font-style: italic; font-size: 0.9rem; }
